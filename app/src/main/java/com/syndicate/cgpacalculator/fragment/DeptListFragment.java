@@ -20,6 +20,7 @@ import com.syndicate.cgpacalculator.cse.CseSemList;
 import com.syndicate.cgpacalculator.ece.EceSemList;
 import com.syndicate.cgpacalculator.eee.EeeSemList;
 import com.syndicate.cgpacalculator.it.ItSemList;
+import com.syndicate.cgpacalculator.mca.McaSem1List;
 import com.syndicate.cgpacalculator.mech.MechSemList;
 
 import mca.McaSem1list;
@@ -69,7 +70,7 @@ public class DeptListFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), ItSemList.class);
                     startActivity(intent);
                 } else if (i == 6) {
-                    Intent intent = new Intent(getActivity(), McaSem1list.class);
+                    Intent intent = new Intent(getActivity(), McaSem1List.class);
                     startActivity(intent);
                 }
             }

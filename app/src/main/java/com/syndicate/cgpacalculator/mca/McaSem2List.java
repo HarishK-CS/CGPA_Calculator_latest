@@ -16,21 +16,21 @@ import android.widget.Toast;
 
 import com.syndicate.cgpacalculator.R;
 
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class McaSem1list extends AppCompatActivity {
+public class McaSem2List extends AppCompatActivity {
     Button submit,clear,copy,s,a,b,c,d,e,f;
     TextView result,resultText;
     ImageView cpyIcon,back;
     EditText t1,t2,t3,t4,t5,t6,t7,t8,t9;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mca_sem1list);
+        setContentView(R.layout.activity_mca_sem2_list);
 
         t1 = findViewById(R.id.txt1);
         t2 = findViewById(R.id.txt2);
@@ -418,7 +418,7 @@ public class McaSem1list extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(McaSem1list.this, McaSem1list.class);
+                Intent intent = new Intent(McaSem2List.this, McaSem2List.class);
                 startActivity(intent);
                 finish();
             }
@@ -469,7 +469,7 @@ public class McaSem1list extends AppCompatActivity {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText("text",result.getText().toString());
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(McaSem1list.this,"GPA Copied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(McaSem2List.this,"GPA Copied",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -606,57 +606,7 @@ public class McaSem1list extends AppCompatActivity {
         return res;
     }
 
-    //    private void setupSemInputs() {
-//        t1.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if (!s.toString().trim().isEmpty()) {
-//                    t2.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//        t2.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if (!s.toString().trim().isEmpty()) {
-//                    t3.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        });
-//        t3.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if (!s.toString().trim().isEmpty()) {
-//                    t4.requestFocus();
-//                }
-//            }
-//
-//            @Override
+  //            @Override
 //            public void afterTextChanged(Editable s) {
 //
 //            }
@@ -778,15 +728,11 @@ public class McaSem1list extends AppCompatActivity {
             FileOutputStream fileOutputStream = openFileOutput("sem2.txt",MODE_PRIVATE);
             fileOutputStream.write(textToSave.getBytes());
             fileOutputStream.close();
-            Toast.makeText(McaSem1list.this,"Added To CGPA ",Toast.LENGTH_SHORT).show();
+            Toast.makeText(McaSem2List.this,"Added To CGPA ",Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
-
-
-
