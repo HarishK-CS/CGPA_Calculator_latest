@@ -24,7 +24,7 @@ public class McaSem2List extends AppCompatActivity {
     Button submit,clear,copy,s,a,b,c,d,e,f;
     TextView result,resultText;
     ImageView cpyIcon,back;
-    EditText t1,t2,t3,t4,t5,t6,t7,t8,t9;
+    EditText t1,t2,t3,t4,t5,t6,t7,t8;
 
 
     @Override
@@ -39,6 +39,7 @@ public class McaSem2List extends AppCompatActivity {
         t5 = findViewById(R.id.txt5);
         t6 = findViewById(R.id.txt6);
         t7 = findViewById(R.id.txt7);
+        t8 = findViewById(R.id.txt8);
 
 
 
@@ -67,11 +68,13 @@ public class McaSem2List extends AppCompatActivity {
         t5.setShowSoftInputOnFocus(false);
         t6.setShowSoftInputOnFocus(false);
         t7.setShowSoftInputOnFocus(false);
+        t8.setShowSoftInputOnFocus(false);
+
 
 
 
         final int[] cursor = {0};
-        final String[] txt = {"t1","t2","t3","t4","t5","t6","t7"};
+        final String[] txt = {"t1","t2","t3","t4","t5","t6","t7","t8"};
 
 
 
@@ -106,6 +109,10 @@ public class McaSem2List extends AppCompatActivity {
                             break;
                         case "t7":
                             t7.setText("S");
+                            cursor[0]++;
+                            break;
+                        case "t8":
+                            t8.setText("S");
                             cursor[0]++;
                             break;
 
@@ -147,6 +154,10 @@ public class McaSem2List extends AppCompatActivity {
                             break;
                         case "t7":
                             t7.setText("A");
+                            cursor[0]++;
+                            break;
+                        case "t8":
+                            t8.setText("A");
                             cursor[0]++;
                             break;
 
@@ -191,6 +202,10 @@ public class McaSem2List extends AppCompatActivity {
                             t7.setText("B");
                             cursor[0]++;
                             break;
+                        case "t8":
+                            t8.setText("B");
+                            cursor[0]++;
+                            break;
 
                     }
                 } else {
@@ -230,6 +245,10 @@ public class McaSem2List extends AppCompatActivity {
                             break;
                         case "t7":
                             t7.setText("C");
+                            cursor[0]++;
+                            break;
+                        case "t8":
+                            t8.setText("C");
                             cursor[0]++;
                             break;
 
@@ -272,6 +291,10 @@ public class McaSem2List extends AppCompatActivity {
                             t7.setText("D");
                             cursor[0]++;
                             break;
+                        case "t8":
+                            t8.setText("D");
+                            cursor[0]++;
+                            break;
 
                     }
                 }else{
@@ -312,6 +335,10 @@ public class McaSem2List extends AppCompatActivity {
                             t7.setText("E");
                             cursor[0]++;
                             break;
+                        case "t8":
+                            t8.setText("E");
+                            cursor[0]++;
+                            break;
 
                     }
                 }else{
@@ -350,6 +377,10 @@ public class McaSem2List extends AppCompatActivity {
                             break;
                         case "t7":
                             t7.setText("F");
+                            cursor[0]++;
+                            break;
+                        case "t8":
+                            t8.setText("F");
                             cursor[0]++;
                             break;
 
@@ -411,6 +442,13 @@ public class McaSem2List extends AppCompatActivity {
                 cursor[0]=6;
             }
         });
+        t8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                t8.setText("");
+                cursor[0]=7;
+            }
+        });
 
 
 
@@ -447,6 +485,7 @@ public class McaSem2List extends AppCompatActivity {
                 t5.setText("");
                 t6.setText("");
                 t7.setText("");
+                t8.setText("");
 
                 result.setVisibility(View.GONE);
                 cpyIcon.setVisibility(View.GONE);
@@ -477,7 +516,7 @@ public class McaSem2List extends AppCompatActivity {
 
     public float calculate()
     {
-        int val1,val2,val3,val4,val5,val6,val7,val8,val9;
+        int val1,val2,val3,val4,val5,val6,val7,val8;
         if (t1.getText().toString().equals("S")||t1.getText().toString().equals("s"))
         {
             val1=10;
@@ -596,12 +635,28 @@ public class McaSem2List extends AppCompatActivity {
         }else{
             val7=0;
         }
+        if (t8.getText().toString().equals("S")||t8.getText().toString().equals("s"))
+        {
+            val8=10;
+        }else if(t8.getText().toString().equals("A")||t8.getText().toString().equals("a")){
+            val8=9;
+        }else if(t8.getText().toString().equals("B")||t8.getText().toString().equals("b")){
+            val8=8;
+        }else if(t8.getText().toString().equals("C")||t8.getText().toString().equals("c")){
+            val8=7;
+        }else if(t8.getText().toString().equals("D")||t8.getText().toString().equals("d")){
+            val8=6;
+        }else if(t8.getText().toString().equals("E")||t8.getText().toString().equals("e")){
+            val8=5;
+        }else{
+            val8=0;
+        }
 
 
 
 
 
-        float res = ((float)val1*3+(float)val2*3+(float)val3*3+(float)val4*3+(float)val5*2+(float)val6*2+(float)val7*2)/30;
+        float res = ((float)val1*3+(float)val2*3+(float)val3*3+(float)val4*3+(float)val5*3+(float)val6*2+(float)val7*2)+(float)val8*2/30;
 
         return res;
     }

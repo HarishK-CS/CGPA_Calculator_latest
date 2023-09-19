@@ -25,7 +25,7 @@ public class McaSem1List extends AppCompatActivity {
     Button submit,clear,copy,s,a,b,c,d,e,f;
     TextView result,resultText;
     ImageView cpyIcon,back;
-    EditText t1,t2,t3,t4,t5,t6,t7,t8,t9;
+    EditText t1,t2,t3,t4,t5,t6,t7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

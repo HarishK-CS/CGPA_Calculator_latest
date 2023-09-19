@@ -23,7 +23,6 @@ import com.syndicate.cgpacalculator.it.ItSemList;
 import com.syndicate.cgpacalculator.mca.McaSem1List;
 import com.syndicate.cgpacalculator.mech.MechSemList;
 
-import mca.McaSem1list;
 
 
 /**
