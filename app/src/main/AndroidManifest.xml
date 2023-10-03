@@ -16,6 +16,93 @@
         android:theme="@style/Theme.CGPACalculator"
         tools:targetApi="33">
         <activity
+            android:name=".ice.ice_sem8"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem7"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".ice.ice_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem8"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem7"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".mtr.mtr_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".mrt.mrt_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".mrt"
+            android:exported="false" />
+        <activity
+            android:name=".mrt_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".robo_sem"
+            android:exported="false" />
+        <activity
+            android:name=".robo_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".robo_sem3"
+            android:exported="false" />
+        <activity
+            android:name=".robo_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".robo_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem8"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem7"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".robotics.robo_sem3"
+            android:exported="false" />
+        <activity
             android:name=".ai23.Ai23Sem2List"
             android:exported="false" />
         <activity
@@ -147,9 +234,6 @@
         <activity
             android:name=".biomed.BioMedSem3List"
             android:exported="false" />
-        <activity
-            android:name=".mca.McaSem1list"
-            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">

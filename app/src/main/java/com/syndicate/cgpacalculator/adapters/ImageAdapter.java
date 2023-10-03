@@ -63,9 +63,10 @@ public class ImageAdapter extends BaseAdapter {
     public Integer[] mThumbIds = {
       R.drawable.cse_logo,R.drawable.ece_logo,R.drawable.eee_logo,R.drawable.mech_logo,
             R.drawable.civil_logo,R.drawable.cse_logo,R.drawable.cse_logo,R.drawable.cse_logo,
-            R.drawable.cse_logo,R.drawable.cse_logo,R.drawable.ece_logo,R.drawable.civil_logo,R.drawable.mech_logo
+            R.drawable.cse_logo,R.drawable.cse_logo,R.drawable.ece_logo,R.drawable.civil_logo,R.drawable.mech_logo,R.drawable.mech_logo,R.drawable.mech_logo,
+            R.drawable.cse_logo
     };
     public String[] mString ={
-      "CSE","ECE","EEE","MECH","CIVIL","IT","MCA","AI","AI 2022-23","BIO MED","CHEMICAL","EIE","FOOD TECH"
+      "CSE","ECE","EEE","MECH","CIVIL","IT","MCA","AI","AI 2022-23","BIO MED","CHEMICAL","EIE","FOOD TECH","ROBOTICS","MECHATRONICS","ICE"
     };
 }
