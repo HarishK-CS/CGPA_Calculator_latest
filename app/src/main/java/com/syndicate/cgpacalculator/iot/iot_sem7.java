@@ -1,4 +1,4 @@
-package com.syndicate.cgpacalculator.ice;
+package com.syndicate.cgpacalculator.iot;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,23 +19,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.syndicate.cgpacalculator.R;
-import com.syndicate.cgpacalculator.eie.EieSem7List;
 import com.syndicate.cgpacalculator.eie.EieSemList;
+import com.syndicate.cgpacalculator.ice.ice_sem7;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ice_sem7 extends AppCompatActivity {
+public class iot_sem7 extends AppCompatActivity {
     Button submit,clear,copy,s,a,b,c,d,e,f;
     TextView result,resultText;
     ImageView cpyIcon,back;
     EditText t1,t2,t3,t4,t5,t6,t7,t8,t9;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ice_sem7);
+        setContentView(R.layout.iot_sem7);
         t1 = findViewById(R.id.txt1);
         t2 = findViewById(R.id.txt2);
         t3 = findViewById(R.id.txt3);
@@ -486,7 +485,7 @@ public class ice_sem7 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ice_sem7.this, EieSemList.class);
+                Intent intent = new Intent(iot_sem7.this, EieSemList.class);
                 startActivity(intent);
                 finish();
             }
@@ -538,7 +537,7 @@ public class ice_sem7 extends AppCompatActivity {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = ClipData.newPlainText("text", result.getText().toString());
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(ice_sem7.this, "GPA Copied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(iot_sem7.this, "GPA Copied", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -876,7 +875,7 @@ public class ice_sem7 extends AppCompatActivity {
             FileOutputStream fileOutputStream = openFileOutput("sem7.txt", MODE_PRIVATE);
             fileOutputStream.write(textToSave.getBytes());
             fileOutputStream.close();
-            Toast.makeText(ice_sem7.this, "Added To CGPA ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(iot_sem7.this, "Added To CGPA ", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

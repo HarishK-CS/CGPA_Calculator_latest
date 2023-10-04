@@ -16,6 +16,27 @@
         android:theme="@style/Theme.CGPACalculator"
         tools:targetApi="33">
         <activity
+            android:name=".iot.iot_sem"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem8"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem7"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem6"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem5"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem4"
+            android:exported="false" />
+        <activity
+            android:name=".iot.iot_sem3"
+            android:exported="false" />
+        <activity
             android:name=".ice.ice_sem8"
             android:exported="false" />
         <activity
