@@ -543,7 +543,7 @@ public class FoodTechSem8List extends AppCompatActivity {
 
 
 
-        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 + (float) val5 * 4 + (float) val6 * 2 ) / 28;
+        float res = ((float) val1 * 1 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 + (float) val5 * 4 + (float) val6 * 8 ) / 25;
 
         return res;
     }

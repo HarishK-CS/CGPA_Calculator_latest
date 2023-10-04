@@ -45,7 +45,7 @@ public class FoodTechSem7List extends AppCompatActivity {
         t7 = findViewById(R.id.txt7);
         t8 = findViewById(R.id.txt8);
         t9 = findViewById(R.id.txt9);
-        t10 = findViewById(R.id.txt10);
+
 
         back = findViewById(R.id.back);
 
@@ -721,7 +721,7 @@ public class FoodTechSem7List extends AppCompatActivity {
         }
 
 
-        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 3 + (float) val5 * 3 + (float) val6 * 2 + (float) val7 * 2 + (float) val8 * 2 + (float) val9 * 1 + (float) val10 * 1) / 28;
+        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 3 + (float) val5 * 3 + (float) val6 * 2 + (float) val7 * 2 + (float) val8 * 1 + (float) val9 * 4 ) / 27;
 
         return res;
     }

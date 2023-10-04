@@ -1,24 +1,20 @@
 package com.syndicate.cgpacalculator.ai23;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-import com.syndicate.cgpacalculator.R;
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.syndicate.cgpacalculator.R;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,10 +22,11 @@ import java.io.IOException;
 
 
 public class Ai23Sem1List extends AppCompatActivity {
-    Button submit,clear,copy,s,a,b,c,d,e,f;
-    TextView result,resultText;
-    ImageView cpyIcon,back;
-    EditText t1,t2,t3,t4,t5,t6;
+    Button submit, clear, copy, s, a, b, c, d, e, f;
+    TextView result, resultText;
+    ImageView cpyIcon, back;
+    EditText t1, t2, t3, t4, t5, t6;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,7 +168,6 @@ public class Ai23Sem1List extends AppCompatActivity {
                             t6.setText("B");
                             cursor[0]++;
                             break;
-
 
 
                     }
@@ -521,11 +517,10 @@ public class Ai23Sem1List extends AppCompatActivity {
             val6 = 0;
         }
 
-        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 + (float) val5 * 4 + (float) val6 * 2 ) / 28;
+        float res = ((float) val1 * 3 + (float) val2 * 4 + (float) val3 * 3 + (float) val4 * (float) 2.5 + (float) val5 * 2 + (float) val6 * 3) / (float) 17.5;
 
         return res;
     }
-
 
 
     public void write() {

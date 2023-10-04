@@ -1,7 +1,5 @@
 package com.syndicate.cgpacalculator.mtr;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -18,8 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.syndicate.cgpacalculator.R;
-import com.syndicate.cgpacalculator.mech.MechSem8List;
 import com.syndicate.cgpacalculator.mech.MechSemList;
 
 import java.io.FileNotFoundException;
@@ -27,10 +26,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class mtr_sem8 extends AppCompatActivity {
-    Button submit,clear,copy,s,a,b,c,d,e,f;
-    TextView result,resultText;
-    ImageView cpyIcon,back;
-    EditText t1,t2,t3,t4,t5,t6;
+    Button submit, clear, copy, s, a, b, c, d, e, f;
+    TextView result, resultText;
+    ImageView cpyIcon, back;
+    EditText t1, t2, t3, t4, t5, t6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,17 +71,15 @@ public class mtr_sem8 extends AppCompatActivity {
         t6.setShowSoftInputOnFocus(false);
 
 
-
         final int[] cursor = {0};
-        final String[] txt = {"t1","t2","t3","t4","t5","t6"};
-
+        final String[] txt = {"t1", "t2", "t3", "t4", "t5", "t6"};
 
 
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cursor[0]<6){
-                    switch(txt[cursor[0]]){
+                if (cursor[0] < 6) {
+                    switch (txt[cursor[0]]) {
                         case "t1":
                             t1.setText("S");
                             cursor[0]++;
@@ -108,8 +105,8 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
-                    cursor[0]=0;
+                } else {
+                    cursor[0] = 0;
                 }
             }
         });
@@ -117,7 +114,7 @@ public class mtr_sem8 extends AppCompatActivity {
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cursor[0]<6) {
+                if (cursor[0] < 6) {
                     switch (txt[cursor[0]]) {
                         case "t1":
                             t1.setText("A");
@@ -144,8 +141,8 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
-                    cursor[0]=0;
+                } else {
+                    cursor[0] = 0;
                 }
             }
 
@@ -217,7 +214,7 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
+                } else {
                     cursor[0] = 0;
                 }
             }
@@ -252,7 +249,7 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
+                } else {
                     cursor[0] = 0;
                 }
             }
@@ -287,7 +284,7 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
+                } else {
                     cursor[0] = 0;
                 }
             }
@@ -322,7 +319,7 @@ public class mtr_sem8 extends AppCompatActivity {
                             cursor[0]++;
                             break;
                     }
-                }else{
+                } else {
                     cursor[0] = 0;
                 }
             }
@@ -332,7 +329,7 @@ public class mtr_sem8 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 t1.setText("");
-                cursor[0]=0;
+                cursor[0] = 0;
             }
         });
 
@@ -340,35 +337,35 @@ public class mtr_sem8 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 t2.setText("");
-                cursor[0]=1;
+                cursor[0] = 1;
             }
         });
         t3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 t3.setText("");
-                cursor[0]=2;
+                cursor[0] = 2;
             }
         });
         t4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 t4.setText("");
-                cursor[0]=3;
+                cursor[0] = 3;
             }
         });
         t5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 t5.setText("");
-                cursor[0]=4;
+                cursor[0] = 4;
             }
         });
         t6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 t6.setText("");
-                cursor[0]=5;
+                cursor[0] = 5;
             }
         });
 
@@ -386,7 +383,7 @@ public class mtr_sem8 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 float res = calculate();
-                result.setText(""+res);
+                result.setText("" + res);
                 result.setVisibility(View.VISIBLE);
                 cpyIcon.setVisibility(View.VISIBLE);
                 copy.setVisibility(View.VISIBLE);
@@ -421,122 +418,114 @@ public class mtr_sem8 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clipData = ClipData.newPlainText("text",result.getText().toString());
+                ClipData clipData = ClipData.newPlainText("text", result.getText().toString());
                 clipboardManager.setPrimaryClip(clipData);
-                Toast.makeText(mtr_sem8.this,"GPA Copied",Toast.LENGTH_SHORT).show();
+                Toast.makeText(mtr_sem8.this, "GPA Copied", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-    public float calculate()
-    {
-        int val1,val2,val3,val4,val5,val6;
-        if (t1.getText().toString().equals("S")||t1.getText().toString().equals("s"))
-        {
-            val1=10;
-        }else if(t1.getText().toString().equals("A")||t1.getText().toString().equals("a")){
-            val1=9;
-        }else if(t1.getText().toString().equals("B")||t1.getText().toString().equals("b")){
-            val1=8;
-        }else if(t1.getText().toString().equals("C")||t1.getText().toString().equals("c")){
-            val1=7;
-        }else if(t1.getText().toString().equals("D")||t1.getText().toString().equals("d")){
-            val1=6;
-        }else if(t1.getText().toString().equals("E")||t1.getText().toString().equals("e")){
-            val1=5;
-        }else{
-            val1=0;
+
+    public float calculate() {
+        int val1, val2, val3, val4, val5, val6;
+        if (t1.getText().toString().equals("S") || t1.getText().toString().equals("s")) {
+            val1 = 10;
+        } else if (t1.getText().toString().equals("A") || t1.getText().toString().equals("a")) {
+            val1 = 9;
+        } else if (t1.getText().toString().equals("B") || t1.getText().toString().equals("b")) {
+            val1 = 8;
+        } else if (t1.getText().toString().equals("C") || t1.getText().toString().equals("c")) {
+            val1 = 7;
+        } else if (t1.getText().toString().equals("D") || t1.getText().toString().equals("d")) {
+            val1 = 6;
+        } else if (t1.getText().toString().equals("E") || t1.getText().toString().equals("e")) {
+            val1 = 5;
+        } else {
+            val1 = 0;
         }
 
-        if (t2.getText().toString().equals("S")||t2.getText().toString().equals("s"))
-        {
-            val2=10;
-        }else if(t2.getText().toString().equals("A")||t2.getText().toString().equals("a")){
-            val2=9;
-        }else if(t2.getText().toString().equals("B")||t2.getText().toString().equals("b")){
-            val2=8;
-        }else if(t2.getText().toString().equals("C")||t2.getText().toString().equals("c")){
-            val2=7;
-        }else if(t2.getText().toString().equals("D")||t2.getText().toString().equals("d")){
-            val2=6;
-        }else if(t2.getText().toString().equals("E")||t2.getText().toString().equals("e")){
-            val2=5;
-        }else{
-            val2=0;
+        if (t2.getText().toString().equals("S") || t2.getText().toString().equals("s")) {
+            val2 = 10;
+        } else if (t2.getText().toString().equals("A") || t2.getText().toString().equals("a")) {
+            val2 = 9;
+        } else if (t2.getText().toString().equals("B") || t2.getText().toString().equals("b")) {
+            val2 = 8;
+        } else if (t2.getText().toString().equals("C") || t2.getText().toString().equals("c")) {
+            val2 = 7;
+        } else if (t2.getText().toString().equals("D") || t2.getText().toString().equals("d")) {
+            val2 = 6;
+        } else if (t2.getText().toString().equals("E") || t2.getText().toString().equals("e")) {
+            val2 = 5;
+        } else {
+            val2 = 0;
         }
 
-        if (t3.getText().toString().equals("S")||t3.getText().toString().equals("s"))
-        {
-            val3=10;
-        }else if(t3.getText().toString().equals("A")||t3.getText().toString().equals("a")){
-            val3=9;
-        }else if(t3.getText().toString().equals("B")||t3.getText().toString().equals("b")){
-            val3=8;
-        }else if(t3.getText().toString().equals("C")||t3.getText().toString().equals("c")){
-            val3=7;
-        }else if(t3.getText().toString().equals("D")||t3.getText().toString().equals("d")){
-            val3=6;
-        }else if(t3.getText().toString().equals("E")||t3.getText().toString().equals("e")){
-            val3=5;
-        }else{
-            val3=0;
+        if (t3.getText().toString().equals("S") || t3.getText().toString().equals("s")) {
+            val3 = 10;
+        } else if (t3.getText().toString().equals("A") || t3.getText().toString().equals("a")) {
+            val3 = 9;
+        } else if (t3.getText().toString().equals("B") || t3.getText().toString().equals("b")) {
+            val3 = 8;
+        } else if (t3.getText().toString().equals("C") || t3.getText().toString().equals("c")) {
+            val3 = 7;
+        } else if (t3.getText().toString().equals("D") || t3.getText().toString().equals("d")) {
+            val3 = 6;
+        } else if (t3.getText().toString().equals("E") || t3.getText().toString().equals("e")) {
+            val3 = 5;
+        } else {
+            val3 = 0;
         }
 
-        if (t4.getText().toString().equals("S")||t1.getText().toString().equals("s"))
-        {
-            val4=10;
-        }else if(t4.getText().toString().equals("A")||t4.getText().toString().equals("a")){
-            val4=9;
-        }else if(t4.getText().toString().equals("B")||t4.getText().toString().equals("b")){
-            val4=8;
-        }else if(t4.getText().toString().equals("C")||t4.getText().toString().equals("c")){
-            val4=7;
-        }else if(t4.getText().toString().equals("D")||t4.getText().toString().equals("d")){
-            val4=6;
-        }else if(t4.getText().toString().equals("E")||t4.getText().toString().equals("e")){
-            val4=5;
-        }else{
-            val4=0;
+        if (t4.getText().toString().equals("S") || t1.getText().toString().equals("s")) {
+            val4 = 10;
+        } else if (t4.getText().toString().equals("A") || t4.getText().toString().equals("a")) {
+            val4 = 9;
+        } else if (t4.getText().toString().equals("B") || t4.getText().toString().equals("b")) {
+            val4 = 8;
+        } else if (t4.getText().toString().equals("C") || t4.getText().toString().equals("c")) {
+            val4 = 7;
+        } else if (t4.getText().toString().equals("D") || t4.getText().toString().equals("d")) {
+            val4 = 6;
+        } else if (t4.getText().toString().equals("E") || t4.getText().toString().equals("e")) {
+            val4 = 5;
+        } else {
+            val4 = 0;
         }
 
-        if (t5.getText().toString().equals("S")||t5.getText().toString().equals("s"))
-        {
-            val5=10;
-        }else if(t5.getText().toString().equals("A")||t5.getText().toString().equals("a")){
-            val5=9;
-        }else if(t5.getText().toString().equals("B")||t5.getText().toString().equals("b")){
-            val5=8;
-        }else if(t5.getText().toString().equals("C")||t5.getText().toString().equals("c")){
-            val5=7;
-        }else if(t5.getText().toString().equals("D")||t5.getText().toString().equals("d")){
-            val5=6;
-        }else if(t5.getText().toString().equals("E")||t5.getText().toString().equals("e")){
-            val5=5;
-        }else{
-            val5=0;
+        if (t5.getText().toString().equals("S") || t5.getText().toString().equals("s")) {
+            val5 = 10;
+        } else if (t5.getText().toString().equals("A") || t5.getText().toString().equals("a")) {
+            val5 = 9;
+        } else if (t5.getText().toString().equals("B") || t5.getText().toString().equals("b")) {
+            val5 = 8;
+        } else if (t5.getText().toString().equals("C") || t5.getText().toString().equals("c")) {
+            val5 = 7;
+        } else if (t5.getText().toString().equals("D") || t5.getText().toString().equals("d")) {
+            val5 = 6;
+        } else if (t5.getText().toString().equals("E") || t5.getText().toString().equals("e")) {
+            val5 = 5;
+        } else {
+            val5 = 0;
         }
 
-        if (t6.getText().toString().equals("S")||t6.getText().toString().equals("s"))
-        {
-            val6=10;
-        }else if(t6.getText().toString().equals("A")||t6.getText().toString().equals("a")){
-            val6=9;
-        }else if(t6.getText().toString().equals("B")||t6.getText().toString().equals("b")){
-            val6=8;
-        }else if(t6.getText().toString().equals("C")||t6.getText().toString().equals("c")){
-            val6=7;
-        }else if(t6.getText().toString().equals("D")||t6.getText().toString().equals("d")){
-            val6=6;
-        }else if(t6.getText().toString().equals("E")||t6.getText().toString().equals("e")){
-            val6=5;
-        }else{
-            val6=0;
+        if (t6.getText().toString().equals("S") || t6.getText().toString().equals("s")) {
+            val6 = 10;
+        } else if (t6.getText().toString().equals("A") || t6.getText().toString().equals("a")) {
+            val6 = 9;
+        } else if (t6.getText().toString().equals("B") || t6.getText().toString().equals("b")) {
+            val6 = 8;
+        } else if (t6.getText().toString().equals("C") || t6.getText().toString().equals("c")) {
+            val6 = 7;
+        } else if (t6.getText().toString().equals("D") || t6.getText().toString().equals("d")) {
+            val6 = 6;
+        } else if (t6.getText().toString().equals("E") || t6.getText().toString().equals("e")) {
+            val6 = 5;
+        } else {
+            val6 = 0;
         }
 
 
-
-
-        float res = ((float)val1*4+(float)val2*1+(float)val3*3+(float)val4*3+(float)val5*8+(float)val6*1)/20;
+        float res = ((float) val1 * 4 + (float) val2 * 1 + (float) val3 * 3 + (float) val4 * 3 + (float) val5 * 8 + (float) val6 * 1) / 20;
 
         return res;
     }
@@ -643,8 +632,8 @@ public class mtr_sem8 extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().trim().isEmpty()) {
-                    InputMethodManager imm  =  (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,0);
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 }
             }
 
@@ -656,17 +645,16 @@ public class mtr_sem8 extends AppCompatActivity {
         });
 
 
-
     }
 
-    public void write(){
+    public void write() {
         String textToSave = result.getText().toString();
 
-        try{
-            FileOutputStream fileOutputStream = openFileOutput("sem8.txt",MODE_PRIVATE);
+        try {
+            FileOutputStream fileOutputStream = openFileOutput("sem8.txt", MODE_PRIVATE);
             fileOutputStream.write(textToSave.getBytes());
             fileOutputStream.close();
-            Toast.makeText(mtr_sem8.this,"Added To CGPA ",Toast.LENGTH_SHORT).show();
+            Toast.makeText(mtr_sem8.this, "Added To CGPA ", Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

@@ -428,7 +428,7 @@ public class Ai23Sem8List extends AppCompatActivity {
         }
 
 
-        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 ) / 28;
+        float res = ((float) val1 * 3 + (float) val2 * 3 + (float) val3 * 3 + (float) val4 * 6 ) / 15;
 
         return res;
     }

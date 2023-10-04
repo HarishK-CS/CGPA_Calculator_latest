@@ -1,7 +1,5 @@
 package com.syndicate.cgpacalculator.robotics;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -18,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.syndicate.cgpacalculator.R;
 import com.syndicate.cgpacalculator.ai.AiSemList;
 
@@ -26,16 +26,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class robo_sem6 extends AppCompatActivity {
-    Button submit,clear,copy,s,a,b,c,d,e,f;
-    TextView result,resultText;
-    ImageView cpyIcon,back;
-    EditText t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+    Button submit, clear, copy, s, a, b, c, d, e, f;
+    TextView result, resultText;
+    ImageView cpyIcon, back;
+    EditText t1, t2, t3, t4, t5, t6, t7, t8, t9, t10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.robo_sem6);
-
 
 
         t1 = findViewById(R.id.txt1);
@@ -79,9 +78,8 @@ public class robo_sem6 extends AppCompatActivity {
         t10.setShowSoftInputOnFocus(false);
 
 
-
         final int[] cursor = {0};
-        final String[] txt = {"t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8","t9","t10"};
+        final String[] txt = {"t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10"};
 
 
         s.setOnClickListener(new View.OnClickListener() {
@@ -129,7 +127,6 @@ public class robo_sem6 extends AppCompatActivity {
                             t9.setText("S");
                             cursor[0]++;
                             break;
-
 
 
                     }
@@ -184,7 +181,6 @@ public class robo_sem6 extends AppCompatActivity {
                             t9.setText("A");
                             cursor[0]++;
                             break;
-
 
 
                     }
@@ -242,9 +238,6 @@ public class robo_sem6 extends AppCompatActivity {
                             break;
 
 
-
-
-
                     }
                 } else {
                     cursor[0] = 0;
@@ -297,8 +290,6 @@ public class robo_sem6 extends AppCompatActivity {
                             t9.setText("C");
                             cursor[0]++;
                             break;
-
-
 
 
                     }
@@ -541,7 +532,6 @@ public class robo_sem6 extends AppCompatActivity {
         });
 
 
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -603,19 +593,10 @@ public class robo_sem6 extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
     }
 
     public float calculate() {
-        int val1, val2, val3, val4, val5, val6, val7, val8, val9,val10;
+        int val1, val2, val3, val4, val5, val6, val7, val8, val9, val10;
         if (t1.getText().toString().equals("S") || t1.getText().toString().equals("s")) {
             val1 = 10;
         } else if (t1.getText().toString().equals("A") || t1.getText().toString().equals("a")) {
@@ -778,10 +759,7 @@ public class robo_sem6 extends AppCompatActivity {
         }
 
 
-
-
-
-        float res = ((float) val1 * 3 + (float) val2 * 3 + (float) val3 * 3 + (float) val4 * 3 + (float) val5 * 3 + (float) val6 * 3 + (float) val7 * (float) 1.5 + (float) val8 * (float) 1.5 + (float) val9 * (float) 1.5) / (float) 22.5;
+        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 + (float) val5 * 4 + (float) val6 * 4 + (float) val7 * 2 + (float) val8 * 2 + (float) val9 * 2 + (float) val10 * 1) / 31;
 
         return res;
     }
