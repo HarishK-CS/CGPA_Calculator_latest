@@ -695,7 +695,7 @@ public class EieSem3List extends AppCompatActivity {
 
 
 
-        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 4 + (float) val4 * 4 + (float) val5 * 4 + (float) val6 * 2 + (float) val7 * 2 + (float) val8 * 2 + (float) val9 * 1 ) / 28;
+        float res = ((float) val1 * 4 + (float) val2 * 4 + (float) val3 * 3 + (float) val4 * 3 + (float) val5 * 4 + (float) val6 * 3 + (float) val7 * 2 + (float) val8 * 2 + (float) val9 * 2 ) / 27;
 
         return res;
     }
